@@ -18,6 +18,9 @@ app.use(errorHandler);
 app.use(express.json({ limit: "200mb", extended: true }));
 app.use(express.urlencoded({ limit: "200mb", extended: true }));
 
+// Routes
+app.use("/api/auth", require("./routes/authRoutes"));
+
 // Start Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
